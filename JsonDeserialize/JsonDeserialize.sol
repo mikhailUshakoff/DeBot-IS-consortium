@@ -2,13 +2,13 @@ pragma solidity >= 0.6.0;
 
 interface IJsonDeserialize {
 
-    function deserialize(uint32 answerId, string json, string structName) external;
+    function deserialize(uint32 answerId, string json, string structName) external returns (bool result);
 
 }
 
 library JsonDeserialize {
 
-	uint256 constant ID_MSG = 0x96517b3e086fdd7dbd0fb916ab59aad1c86bcc6e18376bfa847ac91fefb083a6;
+	uint256 constant ID_MSG = 0x442288826041d564ccedc579674f17c1b0a3452df799656a9167a41ab270ec19;
 	int8 constant DEBOT_WC = -31;
 
 	function deserialize(uint32 answerId, string json, string structName) public pure {

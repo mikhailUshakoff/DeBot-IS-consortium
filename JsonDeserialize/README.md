@@ -4,7 +4,7 @@
 
 | Name      		| ID                                                                |
 | :--------------------	| :---------------------------------------------------------------- |
-| JsonDeserialize       | 96517b3e086fdd7dbd0fb916ab59aad1c86bcc6e18376bfa847ac91fefb083a6  |
+| JsonDeserialize       | 442288826041d564ccedc579674f17c1b0a3452df799656a9167a41ab270ec19  |
 
 ## Description
 
@@ -16,7 +16,7 @@ Allows to deserialize json into the structure.
 
 arguments: 
 
-    answerId: uint32 - function id of result callback
+    answerId: uint32 - function id of result callback. Callback function should have two input parameters: "result" of type bool and "obj" of type <structName>.
 
     json: string - json string
     
@@ -24,9 +24,14 @@ arguments:
 
 returns: 
 
-     result: <structName> - struct of type structName
+     result: bool - result of operation
+				true - operation succeeded
+				false - operation fail
 
->Note: return type is set by structName input parameter. And input parameter of answerId function should be structType.
+     obj: <structName> - structure of type structName
+
+>Note: type of obj parameter is set by structName input parameter. And input parameters of answerId function should have two input parameters: "result" of type bool and "obj" of type <structName>.
+
 		
 ## Declaration in Solidity
 
@@ -35,7 +40,7 @@ returns:
 
 interface IJsonDeserialize {
 
-    function deserialize(uint32 answerId, string json, string structName) external;
+    function deserialize(uint32 answerId, string json, string structName) external returns (bool result);
 
 }
 ```
@@ -48,7 +53,7 @@ namespace tvm { namespace schema {
 __interface IJsonDeserialize {
 
 	[[internal, answer_id]]
-	void deserialize(string json, string structName);
+	bool_t deserialize(string json, string structName);
 	
 };
 
@@ -59,7 +64,7 @@ __interface IJsonDeserialize {
 
 ### Solidity
 
-Example.sol
+[Example.sol](examples/Example.sol)
 
 ### C++
 
