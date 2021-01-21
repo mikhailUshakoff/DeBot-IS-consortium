@@ -30,7 +30,7 @@ returns:
 
      obj: <structName> - structure of type structName
 
->Note: type of obj parameter is set by structName input parameter. And input parameters of answerId function should have two input parameters: "result" of type bool and "obj" of type <structName>.
+>Note: type of obj parameter is set by structName input parameter. And input parameters of answerId function should have two input parameters: "result" of type bool and "obj" of type structName.
 
 		
 ## Declaration in Solidity
