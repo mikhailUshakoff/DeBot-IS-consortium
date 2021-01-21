@@ -26,7 +26,7 @@ returns:
 
      result: bool - result of operation
 				true - operation succeeded
-				false - operation fail
+				false - operation failed
 
      obj: <structName> - structure of type structName
 
