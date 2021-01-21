@@ -9,7 +9,7 @@
 ## Description
 
 Allows to deserialize json into the structure.
-> :warning: **This Interface sould be implemented by DeBot Engine**
+> :warning: **This Interface should be implemented by DeBot Engine**
 
 ## Functions
 
