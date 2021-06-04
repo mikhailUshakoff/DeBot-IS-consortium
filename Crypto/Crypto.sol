@@ -51,5 +51,9 @@ interface ICrypto {
     function chacha20(uint32 answerId, bytes data, bytes nonce, uint32 encHandle) external returns (bytes output);
     //message
     function sendMsg(uint32 answerId, TvmCell message, uint32 edHandle) external returns (bool result);
+    //sign 
+    function signBytes(uint32 answerId, string message, uint32 edHandle) external returns (string signed, string signature);
+    //https://github.com/tonlabs/TON-SDK/blob/master/docs/mod_crypto.md#sign
+    
 }
 
