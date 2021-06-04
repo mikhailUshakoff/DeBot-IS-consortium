@@ -368,6 +368,22 @@ returns:
 	result: bool - result of operation
 
 
+***sign***
+
+`sign` - sign message with the specified ed25519 keypair and return it with signature back.
+
+arguments: 
+
+	answerId  : uint32 - function id of result callback
+	message : string - string to sign
+	edHandle: uint32 - handle to the ed25519 key pair
+
+returns: 
+
+	signed: string - signed string
+	signature: string - string with signature for signed
+
+
 ## Declaration in Solidity
 
 ```jsx
@@ -408,6 +424,9 @@ interface ICrypto {
     function chacha20(uint32 answerId, bytes data, bytes nonce, uint32 encHandle) external returns (bytes output);
     //message
     function sendMsg(uint32 answerId, TvmCell message, uint32 edHandle) external returns (bool result);
+    //sign 
+    function signBytes(uint32 answerId, string message, uint32 edHandle) external returns (string signed, string signature);
+    //https://github.com/tonlabs/TON-SDK/blob/master/docs/mod_crypto.md#sign
 }
 ```
 
